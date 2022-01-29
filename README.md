@@ -1,3 +1,3 @@
 # KnapsackAndSubsetSum
 
-![example workflow](https://github.com/ridouanai/KnapsackAndSubsetSum/actions/workflows/maven.yml/badge.svg)
+![example workflow](https://github.com/ridouanai/KnapsackAndSubsetSum/actions/workflows/CI.yml/badge.svg)
