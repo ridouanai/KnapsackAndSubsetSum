@@ -80,29 +80,4 @@ public class SubsetSum {
 
     }
 
-    public static void main(String args[]) {
-        SubsetSum sub = new SubsetSum();
-        int set[] = {2,4,8,5};
-        int v = 12;
-        int n = 4;
-
-        if (sub.recursion(set,v,n)) {
-            System.out.println(" Recursion : True");
-        }else {
-            System.out.println("Recursion : False");
-        }
-
-        sub.backtracking(set,0,0,v);
-        if (sub.res) {
-            System.out.println(" Backtracking : True");
-        }else {
-            System.out.println("Backtracking : False");
-        }
-
-        if (sub.dynamic(set,v,n)) {
-            System.out.println(" Dynamic Programming : True");
-        }else {
-            System.out.println(" DYnamic Programming : False");
-        }
-    }
 }
