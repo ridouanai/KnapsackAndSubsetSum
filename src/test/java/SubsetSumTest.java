@@ -110,8 +110,8 @@ class SubsetSumTest {
         sub.backtracking(set,0,0,targetSum);
 
         Assertions.assertFalse(sub.res);
-    }*/
-
+    }
+    
     @Test
     void Backtracking_SetIsEmpty_ReturnsFalse() {
         SubsetSum sub = new SubsetSum();
@@ -181,7 +181,7 @@ class SubsetSumTest {
 
         Assertions.assertFalse(sub.dynamic(set,targetSum, set.length));
     }
-    
+
 
     @Test
     void Dynamic_TheSumIsInTheSet_ReturnsTrue() {
