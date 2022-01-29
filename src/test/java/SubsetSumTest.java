@@ -1,4 +1,4 @@
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class SubsetSumTest {
@@ -9,7 +9,7 @@ class SubsetSumTest {
         int set[] = null;
         int targetSum = 12;
 
-        Assert.assertFalse(sub.recursion(set,targetSum, 0));
+        Assertions.assertFalse(sub.recursion(set,targetSum, 0));
     }
 
     @Test
@@ -18,7 +18,7 @@ class SubsetSumTest {
         int set[] = {};
         int targetSum = 12;
 
-        Assert.assertFalse(sub.recursion(set,targetSum,set.length));
+        Assertions.assertFalse(sub.recursion(set,targetSum,set.length));
     }
 
     @Test
@@ -27,7 +27,7 @@ class SubsetSumTest {
         int set[] = {3, 4, 1, 9};
         int targetSum = 0;
 
-        Assert.assertTrue(sub.recursion(set,targetSum,set.length));
+        Assertions.assertTrue(sub.recursion(set,targetSum,set.length));
     }
 
     @Test
@@ -36,7 +36,7 @@ class SubsetSumTest {
         int set[] = {3, 4, 1, 9};
         int targetSum = -4;
 
-        Assert.assertFalse(sub.recursion(set,targetSum,set.length));
+        Assertions.assertFalse(sub.recursion(set,targetSum,set.length));
     }
 
     @Test
@@ -46,7 +46,7 @@ class SubsetSumTest {
         int targetSum = 5;
         int length = 0;
 
-        Assert.assertFalse(sub.recursion(set,targetSum,length));
+        Assertions.assertFalse(sub.recursion(set,targetSum,length));
     }
 
     @Test
@@ -55,7 +55,7 @@ class SubsetSumTest {
         int set[] = {3, 4, 1, 9};
         int targetSum = 5;
 
-        Assert.assertTrue(sub.recursion(set,targetSum,set.length));
+        Assertions.assertTrue(sub.recursion(set,targetSum,set.length));
     }
 
     @Test
@@ -64,7 +64,7 @@ class SubsetSumTest {
         int set[] = {3, 4, 1, 9};
         int targetSum = 6;
 
-        Assert.assertFalse(sub.recursion(set,targetSum,set.length));
+        Assertions.assertFalse(sub.recursion(set,targetSum,set.length));
     }
 
     @Test
@@ -73,7 +73,7 @@ class SubsetSumTest {
         int set[] = {0, 0, 0, 0};
         int targetSum = 4;
 
-        Assert.assertFalse(sub.recursion(set,targetSum,set.length));
+        Assertions.assertFalse(sub.recursion(set,targetSum,set.length));
     }
 
     @Test
@@ -84,7 +84,7 @@ class SubsetSumTest {
 
         sub.backtracking(set,0,13,targetSum);
 
-        Assert.assertFalse(sub.res);
+        Assertions.assertFalse(sub.res);
     }
 
     /*
@@ -98,9 +98,10 @@ class SubsetSumTest {
 
         sub.backtracking(set,1,13,targetSum);
 
-        Assert.assertFalse(sub.res);
+        Assertions.assertFalse(sub.res);
     }
 
+    /*
     @Test
     void Backtracking_SetIsNull_ReturnsFalse() {
         SubsetSum sub = new SubsetSum();
@@ -109,8 +110,8 @@ class SubsetSumTest {
 
         sub.backtracking(set,0,0,targetSum);
 
-        Assert.assertFalse(sub.res);
-    }
+        Assertions.assertFalse(sub.res);
+    }*/
 
     @Test
     void Backtracking_SetIsEmpty_ReturnsFalse() {
@@ -120,7 +121,7 @@ class SubsetSumTest {
 
         sub.backtracking(set,0,0,targetSum);
 
-        Assert.assertFalse(sub.res);
+        Assertions.assertFalse(sub.res);
     }
 
     @Test
@@ -131,7 +132,7 @@ class SubsetSumTest {
 
         sub.backtracking(set,0,0,targetSum);
 
-        Assert.assertTrue(sub.res);
+        Assertions.assertTrue(sub.res);
     }
 
     @Test
@@ -142,7 +143,7 @@ class SubsetSumTest {
 
         sub.backtracking(set,0,0,targetSum);
 
-        Assert.assertFalse(sub.res);
+        Assertions.assertFalse(sub.res);
     }
 
     @Test
@@ -151,7 +152,7 @@ class SubsetSumTest {
         int set[] = null;
         int targetSum = 7;
 
-        Assert.assertFalse(sub.dynamic(set,targetSum,0));
+        Assertions.assertFalse(sub.dynamic(set,targetSum,0));
     }
 
     @Test
@@ -160,7 +161,7 @@ class SubsetSumTest {
         int set[] = {};
         int targetSum = 7;
 
-        Assert.assertFalse(sub.dynamic(set,targetSum, set.length));
+        Assertions.assertFalse(sub.dynamic(set,targetSum, set.length));
     }
 
     @Test
@@ -169,17 +170,19 @@ class SubsetSumTest {
         int set[] = {2, 8, 13};
         int targetSum = 0;
 
-        Assert.assertTrue(sub.dynamic(set,targetSum, set.length));
+        Assertions.assertTrue(sub.dynamic(set,targetSum, set.length));
     }
 
+    /*
     @Test
     void Dynamic_TargetSumIsNegative_ReturnsFalse() {
         SubsetSum sub = new SubsetSum();
         int set[] = {2, 8, 13};
         int targetSum = -9;
 
-        Assert.assertFalse(sub.dynamic(set,targetSum, set.length));
+        Assertions.assertFalse(sub.dynamic(set,targetSum, set.length));
     }
+    */
 
     @Test
     void Dynamic_TheSumIsInTheSet_ReturnsTrue() {
@@ -187,7 +190,7 @@ class SubsetSumTest {
         int set[] = {2, 8, 5, 1, 3, 10, 13};
         int targetSum = 25;
 
-        Assert.assertTrue(sub.dynamic(set,targetSum, set.length));
+        Assertions.assertTrue(sub.dynamic(set,targetSum, set.length));
     }
 
     @Test
@@ -196,7 +199,7 @@ class SubsetSumTest {
         int set[] = {2, 0, 3, 21, 11};
         int targetSum = 25;
 
-        Assert.assertFalse(sub.dynamic(set,targetSum, set.length));
+        Assertions.assertFalse(sub.dynamic(set,targetSum, set.length));
     }
 
     @Test
@@ -205,6 +208,6 @@ class SubsetSumTest {
         int set[] = {0, 0, 0, 0};
         int targetSum = 2;
 
-        Assert.assertFalse(sub.dynamic(set,targetSum, set.length));
+        Assertions.assertFalse(sub.dynamic(set,targetSum, set.length));
     }
 }
