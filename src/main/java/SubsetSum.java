@@ -6,17 +6,16 @@ public class SubsetSum {
      *
      * @param set l'ensemble des entiers
      * @param target_sum  la somme recherchée
-     * @param lenght la longueur du l'ensemble
+     * @param length la longueur du l'ensemble
      * @return vrai / faux selon que le sous-ensemble de somme target_sum existe ou pas
      */
 
-    public Boolean recursion (int set [], int target_sum, int lenght ) {
+    public Boolean recursion (int set [], int target_sum, int length ) {
         if (target_sum == 0) return true;
-        else if (lenght == 0) return false;
-        else return recursion(set, target_sum - set[lenght-1], lenght - 1) || recursion(set, target_sum , lenght - 1);
-
+        else if (length == 0) return false;
+        else return recursion(set, target_sum - set[length-1], length - 1)
+                    || recursion(set, target_sum , length - 1);
     }
-
 
     /**
      * backtracking  : Résolution du problème à l'aide du backtracking
@@ -30,7 +29,7 @@ public class SubsetSum {
 
     public void backtracking (int set[], int current_index, int sum, int target_sum) {
 
-        if (sum > target_sum) {
+        if (set == null || sum > target_sum) {
             return;
         }
 
@@ -43,8 +42,6 @@ public class SubsetSum {
                 backtracking(set, i + 1, sum + set[i], target_sum);
             }
         }
-
-
     }
 
     /**
@@ -52,14 +49,20 @@ public class SubsetSum {
      *
      * @param set l'ensemble des entiers
      * @param target_sum  la somme recherchée
-     * @param lenght la longueur du l'ensemble
+     * @param length la longueur du l'ensemble
      * @return vrai / faux selon que le sous-ensemble de somme target_sum existe ou pas
      */
 
-    public Boolean dynamic (int set [], int target_sum, int lenght ) {
-        boolean tab[][] = new boolean[target_sum + 1][lenght + 1];
+    public Boolean dynamic (int set [], int target_sum, int length ) {
 
-        for (int i = 0; i < lenght + 1; i++) {
+        if (target_sum < 0)
+        {
+            return false;
+        }
+
+        boolean tab[][] = new boolean[target_sum + 1][length + 1];
+
+        for (int i = 0; i < length + 1; i++) {
             tab[0][i] = true;
         }
         for (int i = 1; i < target_sum + 1; i++) {
@@ -67,17 +70,12 @@ public class SubsetSum {
         }
 
         for (int i = 1; i < target_sum + 1; i++) {
-            for (int j = 1; j < lenght + 1; j++) {
+            for (int j = 1; j < length + 1; j++) {
                 tab[i][j] = tab[i][j - 1];
                 if (i >= set[j - 1])
                     tab[i][j] = tab[i][j] || tab[i - set[j - 1]][j - 1];
-
             }
         }
-
-        return tab[target_sum][lenght];
-
-
+        return tab[target_sum][length];
     }
-
 }

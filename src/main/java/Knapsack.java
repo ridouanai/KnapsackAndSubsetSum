@@ -10,10 +10,10 @@ public class Knapsack {
      */
     public static int Recursion(int n, int W, int value[], int weight[])
     {
-        if(n == 0 || W ==  0)
+        if (n == 0 || W ==  0 || value == null || weight == null)
             return 0;
 
-        if(weight[n - 1] > W)
+        if (weight[n - 1] > W)
             return Recursion(n - 1, W, value, weight);
 
         int included = value[n - 1] + Recursion(n - 1, W - weight[n - 1], value, weight);
@@ -33,7 +33,7 @@ public class Knapsack {
      */
     public static int DynamicPrograming(int n, int W, int value[], int weight[])
     {
-        if (n <= 0 || W <= 0) {
+        if (n <= 0 || W <= 0 || value == null || weight == null) {
             return 0;
         }
 
@@ -67,10 +67,14 @@ public class Knapsack {
      */
     public static int GreedyAlgorithm(int n, int W, int value[], int weight[])
     {
+        if (value == null || weight == null)
+        {
+            return 0;
+        }
         int current_p = 0;
         int current_v = 0;
 
-        for(int i = 0; i < n ; i++)
+        for (int i = 0; i < n ; i++)
         {
             if(weight[i] + current_p <= W)
             {
@@ -81,35 +85,4 @@ public class Knapsack {
 
         return current_v;
     }
-
-    public static void main(String args[])
-    {
-        /*
-        // la valeur de chaque element
-        int valeur[] = new int[] {1, 4, 5, 7};
-
-        //le poids de chaque element
-        int poids[] = new int[] {1, 3, 4, 5};
-
-        int P = 7;
-        int n = valeur.length;
-
-
-        System.out.println("La solution optimale est: " + Recursion(n, P, valeur, poids));
-        System.out.println("La solution optimale est: " + DynamicPrograming(n, P, valeur, poids));
-        */
-
-        // la valeur de chaque element
-        int valeur[] = new int[] {7, 5, 4, 1};
-
-        //le poids de chaque element
-        int poids[] = new int[] {5, 4, 3, 1};
-
-        int P = 7;
-        int n = valeur.length;
-
-        System.out.println("La solution optimale est: " + GreedyAlgorithm(n, P, valeur, poids));
-
-    }
-
 }

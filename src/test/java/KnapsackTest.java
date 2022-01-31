@@ -23,7 +23,6 @@ class KnapsackTest {
         Assertions.assertEquals(0, knapsack.Recursion(n,c, valeurs, poids));
     }
 
-
     @Test
     void Recursion_CapacityIsZero_ReturnsZero() {
         Knapsack knapsack = new Knapsack();
@@ -43,6 +42,8 @@ class KnapsackTest {
         int n = 0;
         Assertions.assertEquals(0, knapsack.Recursion(n,c, valeurs, poids));
     }
+
+
 
     @Test
     void Dynamic_ValuesIsNull_ReturnsZero() {
@@ -64,7 +65,6 @@ class KnapsackTest {
         Assertions.assertEquals(0, knapsack.DynamicPrograming(n,c, valeurs, poids));
     }
 
-
     @Test
     void Dynamic_CapacityIsZero_ReturnsZero() {
         Knapsack knapsack = new Knapsack();
@@ -84,6 +84,8 @@ class KnapsackTest {
         int n = 0;
         Assertions.assertEquals(0, knapsack.DynamicPrograming(n,c, valeurs, poids));
     }
+
+
 
     @Test
     void Greedy_ValuesIsNull_ReturnsZero() {
@@ -105,7 +107,6 @@ class KnapsackTest {
         Assertions.assertEquals(0, knapsack.GreedyAlgorithm(n,c, valeurs, poids));
     }
 
-
     @Test
     void Greedy_CapacityIsZero_ReturnsZero() {
         Knapsack knapsack = new Knapsack();
@@ -126,7 +127,8 @@ class KnapsackTest {
         Assertions.assertEquals(0, knapsack.GreedyAlgorithm(n,c, valeurs, poids));
     }
 
-    
+
+
     @Test
     void Recursion_NormalCase() {
         Knapsack knapsack = new Knapsack();
@@ -134,10 +136,9 @@ class KnapsackTest {
         int poids[] = new int[] {1, 3, 4, 5};
         int c = 12;
         int n = 4;
-        Assertions.assertEquals(9, knapsack.Recursion(n,c, valeurs, poids));
+        Assertions.assertEquals(16, knapsack.Recursion(n,c, valeurs, poids));
   
     }
-    
 
     @Test
     void Recursion_TheValuesContainOnlyZero_ReturnsZero() {
@@ -159,6 +160,8 @@ class KnapsackTest {
         Assertions.assertEquals(17, knapsack.Recursion(n,c, valeurs, poids));
     }
 
+
+
     @Test
     void Dynamic_NormalCase() {
         Knapsack knapsack = new Knapsack();
@@ -166,10 +169,9 @@ class KnapsackTest {
         int poids[] = new int[] {1, 3, 4, 5};
         int c = 12;
         int n = 4;
-        Assertions.assertEquals(9, knapsack.DynamicPrograming(n,c, valeurs, poids));
+        Assertions.assertEquals(16, knapsack.DynamicPrograming(n,c, valeurs, poids));
   
     }
-    
 
     @Test
     void Dynamic_TheValuesContainOnlyZero_ReturnsZero() {
@@ -192,6 +194,7 @@ class KnapsackTest {
     }
 
 
+
     @Test
     void Greedy_NormalCase() {
         Knapsack knapsack = new Knapsack();
@@ -199,10 +202,9 @@ class KnapsackTest {
         int poids[] = new int[] {1, 3, 4, 5};
         int c = 12;
         int n = 4;
-        Assertions.assertEquals(9, knapsack.GreedyAlgorithm(n,c, valeurs, poids));
+        Assertions.assertEquals(10, knapsack.GreedyAlgorithm(n,c, valeurs, poids));
   
     }
-    
 
     @Test
     void Greedy_TheValuesContainOnlyZero_ReturnsZero() {
